@@ -1,3 +1,4 @@
+import 'package:boostera/src/core/route/app_route.dart';
 import 'package:flutter/material.dart';
 
 class BossteraApp extends StatelessWidget {
@@ -5,6 +6,9 @@ class BossteraApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router,
+    );
   }
 }
