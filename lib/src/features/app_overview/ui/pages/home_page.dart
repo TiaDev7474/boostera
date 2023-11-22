@@ -5,6 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar:  AppBar(
           title: const Text('Boostera.',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black),),
