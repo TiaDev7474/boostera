@@ -11,6 +11,7 @@ class BossteraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
+
       BlocProvider(create: (context)=>CategoryBloc(
         GetIt.instance<CategoryRepository>()
       ))
