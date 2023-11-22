@@ -1,3 +1,4 @@
+import 'package:boostera/src/common/widget/logo.widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,13 +9,13 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
         appBar:  AppBar(
-          title: const Text('Boostera.',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black),),
+          title: const BoosteraLogo(),
           actions: const [
             IconButton(onPressed: null, icon: Icon(Icons.search,color: Colors.black)),
             IconButton(onPressed: null, icon: Icon(Icons.notifications_outlined,color: Colors.black))
           ],
           elevation: 0,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.white10,
         ),
         body: const Column(
           children: [
