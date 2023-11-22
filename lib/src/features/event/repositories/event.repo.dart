@@ -1,4 +1,7 @@
+
 import 'dart:io';
+
+import 'package:boostera/src/common/constants/events.dart';
 import 'package:boostera/src/features/event/dto/event.create.dto.dart';
 import 'package:boostera/src/features/event/dto/event.update.dto.dart';
 import 'package:boostera/src/features/event/model/event.model.dart';
@@ -13,8 +16,8 @@ abstract class EventRepository {
 
 class EventRepositoryImpl implements EventRepository {
 
-  EventRepositoryImpl({ required this.client});
-  final HttpClient client;
+  EventRepositoryImpl({ this.client});
+  var client;
 
   @override
   Future<void> createOne({required CreateEventDTO createEventDTO}) {
@@ -29,9 +32,9 @@ class EventRepositoryImpl implements EventRepository {
   }
 
   @override
-  Future<List<Event>> getAll({required int perPage, int? currentPage = 0}) {
-    // TODO: implement getAll
-    throw UnimplementedError();
+  Future<List<Event>> getAll({required int perPage, int? currentPage = 0}) async {
+     await Future.delayed(const Duration(seconds: 5000));
+     return eventList.map((event )=> Event.fromJson(event)).toList();
   }
 
   @override

@@ -5,6 +5,8 @@ import 'package:boostera/src/features/event/dto/event.update.dto.dart';
 
 sealed class EventBlocEvent {}
 
+final class EventStarted extends EventBlocEvent{}
+
 final class EventLoadAll extends EventBlocEvent{
   final String? perPage;
   final String? currentPAge;
