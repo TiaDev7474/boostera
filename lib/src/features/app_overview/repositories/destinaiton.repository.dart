@@ -52,7 +52,16 @@ class DestinationRepository {
       if(rnd > 0){
         return destinations.values.toList();
       }else{
-        throw Exception("Cannot get all categories");
+        throw Exception("Cannot get all destinations");
+      }
+    }
+    Future<List<Destination>> getDestinationByCategory(int category)async{
+      await Future.delayed(const Duration(seconds: 1));
+      int rnd = Random().nextInt(10);
+      if(rnd > 0){
+        return destinations.values.where((element) => element.category == category).toList();
+      }else{
+        throw Exception("Cannot get all destination by category");
       }
     }
 }
