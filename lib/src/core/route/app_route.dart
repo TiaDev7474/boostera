@@ -1,4 +1,5 @@
 import 'package:boostera/src/common/constants/routes.dart' as route_path;
+import 'package:boostera/src/features/event/ui/pages/events_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -56,7 +57,7 @@ class AppRouter {
                                           },
                                           child: const Text("go to details")
                                       )
-                                  ],
+                                  ]
                                 ),
                                 state: state
                             );
@@ -72,6 +73,19 @@ class AppRouter {
                                  }
                              )
                           ]
+                      )
+                    ]
+                ),
+                StatefulShellBranch(
+                    routes: [
+                      GoRoute(
+                          path: route_path.eventPage,
+                          pageBuilder: (context, state) {
+                            return getPage(
+                                child: const EventPage(), 
+                                state: state
+                            );
+                          }
                       )
                     ]
                 )

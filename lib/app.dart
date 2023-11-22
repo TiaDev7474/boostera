@@ -18,6 +18,13 @@ class BossteraApp extends StatelessWidget {
     ], child: MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white70,
+          iconTheme: IconThemeData(color: Colors.black87,size: 32),
+          elevation: 0
+        )
+      ),
     ));
   }
 }
