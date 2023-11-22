@@ -2,7 +2,7 @@ import 'package:boostera/src/common/constants/routes.dart' as route_path;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/app_overview/home_page.dart';
+import '../../features/app_overview/ui/pages/home_page.dart';
 
 
 
