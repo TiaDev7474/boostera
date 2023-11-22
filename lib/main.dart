@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 void main(){
   AppRouter.instance;
   GetIt.instance.registerLazySingleton<EventRepositoryImpl>(() => EventRepositoryImpl(client: http.Client()));
-  GetIt.instance.registerLazySingleton<EventRepositoryProvider>(() => EventRepositoryProvider(GetIt.instance<EventRepositoryImpl>());
+  GetIt.instance.registerLazySingleton<EventRepositoryProvider>(() => EventRepositoryProvider(GetIt.instance<EventRepositoryImpl>()));
   runApp(const BossteraApp());
 }
 
