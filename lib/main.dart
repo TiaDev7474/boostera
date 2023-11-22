@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:boostera/app.dart';
 import 'package:boostera/src/core/route/app_route.dart';
 import 'package:boostera/src/features/event/repositories/event.repo.dart';
@@ -10,6 +8,7 @@ import 'package:http/http.dart' as http;
 void main(){
   AppRouter.instance;
   GetIt.instance.registerLazySingleton<EventRepositoryImpl>(() => EventRepositoryImpl(client: http.Client()));
+  GetIt.instance.registerLazySingleton<EventRepositoryProvider>(() => EventRepositoryProvider(GetIt.instance<EventRepositoryImpl>());
   runApp(const BossteraApp());
 }
 
