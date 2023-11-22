@@ -1,6 +1,8 @@
 import 'package:boostera/src/core/route/app_route.dart';
 import 'package:boostera/src/features/app_overview/bloc/bloc/category.bloc.dart';
 import 'package:boostera/src/features/app_overview/repositories/category.repository.dart';
+import 'package:boostera/src/features/event/bloc/event.bloc.dart';
+import 'package:boostera/src/features/event/repositories/event.repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -14,6 +16,9 @@ class BossteraApp extends StatelessWidget {
 
       BlocProvider(create: (context)=>CategoryBloc(
         GetIt.instance<CategoryRepository>()
+      )),
+      BlocProvider(create: (context) => EventBloc(
+        GetIt.instance<EventRepositoryProvider>()
       ))
 
     ], child: MaterialApp.router(

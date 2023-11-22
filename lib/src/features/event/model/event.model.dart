@@ -2,7 +2,7 @@ class Event {
   final String eventId;
   final String eventName;
   final String eventLocation;
-  final DateTime eventDate;
+  final int eventDate;
   final String eventBannerUrl;
 
 
@@ -19,7 +19,7 @@ class Event {
        return Event(
            eventId: json['eventId'] as String,
            eventName: json['eventName'] as String,
-           eventDate: json['eventDate'] as DateTime,
+           eventDate: DateTime.now().millisecondsSinceEpoch + 2 * 24 * 60 * 60 * 1000,
            eventLocation: json['eventLocation'] as String,
            eventBannerUrl: json['eventBannerUrl'] as String,
        );
