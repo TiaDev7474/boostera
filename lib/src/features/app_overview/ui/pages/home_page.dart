@@ -1,4 +1,5 @@
 import 'package:boostera/src/common/widget/logo.widget.dart';
+import 'package:boostera/src/features/app_overview/ui/widget/list.category.widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,9 +18,13 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white10,
         ),
-        body: const Column(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
+              Container(
+                  padding: const EdgeInsets.all(16),
+                  child: const Text('Category',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+              const ListCategoryWidget()
           ],
         )
     );
