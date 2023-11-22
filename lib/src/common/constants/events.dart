@@ -1,35 +1,35 @@
 List<Map<String, dynamic>> eventList = [
   {
     'eventId': '1',
-    'eventName': 'Somaroho Celebration',
+    'eventName': 'Somaroho',
     'eventDate': '2023-07-15T12:00:00Z',
     'eventLocation': 'Antananarivo, Madagascar',
     'eventBannerUrl': 'https://example.com/somaroho-celebration.jpg',
   },
   {
     'eventId': '2',
-    'eventName': 'Malagasy Independence Day Parade',
+    'eventName': 'Malagasy Independence Day',
     'eventDate': '2023-06-26T10:00:00Z',
     'eventLocation': 'Various cities in Madagascar',
     'eventBannerUrl': 'https://example.com/independence-day-parade.jpg',
   },
   {
     'eventId': '3',
-    'eventName': 'Tsakitsaky Music Festival',
+    'eventName': 'Tsakitsaky',
     'eventDate': '2023-08-20T19:00:00Z',
     'eventLocation': 'Nosy Be, Madagascar',
     'eventBannerUrl': 'https://example.com/tsakitsaky-music-festival.jpg',
   },
   {
     'eventId': '4',
-    'eventName': 'Antananarivo Arts and Crafts Fair',
+    'eventName': 'Arts and Crafts Fair',
     'eventDate': '2023-09-10T11:00:00Z',
     'eventLocation': 'Antananarivo, Madagascar',
     'eventBannerUrl': 'https://example.com/arts-crafts-fair.jpg',
   },
   {
     'eventId': '5',
-    'eventName': 'Madagascar Film Festival',
+    'eventName': 'Film Festival',
     'eventDate': '2023-11-05T17:30:00Z',
     'eventLocation': 'Antsiranana, Madagascar',
     'eventBannerUrl': 'https://example.com/madagascar-film-festival.jpg',
@@ -43,7 +43,7 @@ List<Map<String, dynamic>> eventList = [
   },
   {
     'eventId': '7',
-    'eventName': 'Makay Mountain Trekking Expedition',
+    'eventName': 'Makay Trekking Expedition',
     'eventDate': '2023-12-01T08:00:00Z',
     'eventLocation': 'Makay Massif, Madagascar',
     'eventBannerUrl': 'https://example.com/makay-trekking-expedition.jpg',
@@ -64,7 +64,7 @@ List<Map<String, dynamic>> eventList = [
   },
   {
     'eventId': '10',
-    'eventName': 'Traditional Malagasy Dance Competition',
+    'eventName': 'Traditional Dance Competition',
     'eventDate': '2023-09-25T13:30:00Z',
     'eventLocation': 'Toamasina, Madagascar',
     'eventBannerUrl': 'https://example.com/malagasy-dance-competition.jpg',

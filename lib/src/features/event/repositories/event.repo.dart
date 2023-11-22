@@ -1,6 +1,4 @@
 
-import 'dart:io';
-
 import 'package:boostera/src/common/constants/events.dart';
 import 'package:boostera/src/features/event/dto/event.create.dto.dart';
 import 'package:boostera/src/features/event/dto/event.update.dto.dart';
@@ -33,7 +31,7 @@ class EventRepositoryImpl implements EventRepository {
 
   @override
   Future<List<Event>> getAll({required int perPage, int? currentPage = 0}) async {
-     await Future.delayed(const Duration(seconds: 5000));
+     await Future.delayed(const Duration(seconds: 1));
      return eventList.map((event )=> Event.fromJson(event)).toList();
   }
 
@@ -66,7 +64,7 @@ class EventRepositoryProvider implements EventRepository{
 
   @override
   Future<List<Event>> getAll({required int perPage, int? currentPage = 0}) {
-     return eventRepositoryImpl.getAll(perPage: perPage,currentPage: currentPage);
+     return  eventRepositoryImpl.getAll(perPage: perPage,currentPage: currentPage);
   }
 
   @override

@@ -5,6 +5,7 @@ import 'package:boostera/src/features/event/bloc/event.state.dart';
 import 'package:boostera/src/features/event/model/event.model.dart';
 import 'package:boostera/src/features/event/repositories/event.repo.dart';
 
+
 class EventBloc extends Bloc<EventBlocEvent, EventState> {
   EventBloc(EventRepositoryProvider eventRepositoryProvider)
       : super(EventState(
@@ -12,12 +13,13 @@ class EventBloc extends Bloc<EventBlocEvent, EventState> {
             requestStatus: RequestState.none,
             events: [],
             errorMessage: "")) {
-    on<EventLoadAll>((event, emit) {
+    on<EventLoadAll>((event, emit) async {
       emit(
           EventState(currentEvent: event, requestStatus: RequestState.loading));
-      List<Event> events = eventRepositoryProvider.getAll(
+      List<Event> events = await  eventRepositoryProvider.getAll(
           perPage: event.perPage as int,
-          currentPage: event.perPage as int) as List<Event>;
+          currentPage: event.perPage as int);
+      print(events.length);
       emit(EventState(currentEvent: event, requestStatus: RequestState.loaded,events: events));
     });
   }

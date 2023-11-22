@@ -8,9 +8,9 @@ sealed class EventBlocEvent {}
 final class EventStarted extends EventBlocEvent{}
 
 final class EventLoadAll extends EventBlocEvent{
-  final String? perPage;
-  final String? currentPAge;
-  EventLoadAll(this.perPage, this.currentPAge);
+  final int? perPage;
+  final int? currentPAge;
+  EventLoadAll({this.perPage, this.currentPAge = 0});
 }
 
 final class EventUpdate extends EventBlocEvent{
