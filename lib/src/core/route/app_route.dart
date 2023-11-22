@@ -16,8 +16,8 @@ class AppRouter {
   }
 
   AppRouter._internal() {
-
     router = GoRouter(
+        debugLogDiagnostics: true,
         navigatorKey: _rootNavigatorKey,
         initialLocation: route_path.homePage,
         routes: [
@@ -44,7 +44,17 @@ class AppRouter {
                           path: route_path.destinationPage,
                           pageBuilder: (context, state) {
                             return getPage(
-                                child: const Text('destination'),
+                                child: Column(
+                                  children: [
+                                     const Text("destionation"),
+                                      ElevatedButton(
+                                          onPressed: (){
+                                              AppRouter.router.go(route_path.destinationDetailPage);
+                                          },
+                                          child: const Text("go to details")
+                                      )
+                                  ],
+                                ),
                                 state: state
                             );
                           },
