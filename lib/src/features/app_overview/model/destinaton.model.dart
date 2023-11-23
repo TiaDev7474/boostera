@@ -6,7 +6,8 @@ class Destination {
   String? address;
   double? rating;
   int? category;
+  String? categoryDescription;
 
   List<int> likeUserIds;
-  Destination({this.address,this.imageUrl,this.title,this.rating,this.likeUserIds = const [],this.category});
+  Destination({this.categoryDescription,this.address,this.imageUrl,this.title,this.rating,this.likeUserIds = const [],this.category});
 }
