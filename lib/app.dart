@@ -2,7 +2,6 @@ import 'package:boostera/src/core/route/app_route.dart';
 import 'package:boostera/src/features/app_overview/bloc/bloc/category.bloc.dart';
 import 'package:boostera/src/features/app_overview/bloc/bloc/destination.bloc.dart';
 import 'package:boostera/src/features/app_overview/bloc/bloc/like.blloc.dart';
-import 'package:boostera/src/features/app_overview/model/destinaton.model.dart';
 import 'package:boostera/src/features/app_overview/repositories/category.repository.dart';
 import 'package:boostera/src/features/app_overview/repositories/destinaiton.repository.dart';
 import 'package:boostera/src/features/event/bloc/event.bloc.dart';
@@ -33,6 +32,13 @@ class BossteraApp extends StatelessWidget {
     ], child: MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+           color: Colors.white,
+           elevation: 0,
+           iconTheme: IconThemeData(color: Colors.black87)
+        )
+      ),
     ));
   }
 }
