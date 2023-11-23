@@ -131,6 +131,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
        ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: child.currentIndex,
+        selectedItemColor: Colors.black87,
+        selectedFontSize: 12,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
