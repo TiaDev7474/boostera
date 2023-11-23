@@ -45,7 +45,7 @@ class DestinationRepository {
         likeUserIds: [2, 7, 9],
       ),
       5: Destination(
-        destinationId: 4,
+        destinationId: 5,
         imageUrl: 'assets/Antananarivo.jpg',
         title: 'Ranomafana National Park',
         category: 4,
