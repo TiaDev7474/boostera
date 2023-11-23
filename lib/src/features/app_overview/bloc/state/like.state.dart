@@ -1,5 +1,5 @@
 class LikeState{
 
   List<int> destinationLikedIds;
-  LikeState({this.destinationLikedIds= const []});
+  LikeState({ required this.destinationLikedIds});
 }

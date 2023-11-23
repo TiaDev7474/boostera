@@ -20,7 +20,9 @@ class DestinationItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius:  BorderRadius.circular(12),
-              child: Image.asset('assets/Somaroho.jpg',fit: BoxFit.cover,),
+              child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Image.asset('${destination.imageUrl}',fit: BoxFit.cover,)),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -77,9 +79,15 @@ class DestinationItem extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: BlocBuilder<LikeBloc,LikeState>(
-                      builder: (context,state) =>
-                      const IconButton(onPressed: null, icon: Icon(Icons.favorite_outline,size: 32,))
+                  child: BlocBuilder<LikeBloc, LikeState>(
+                    builder: (context, state) => IconButton(
+                      onPressed: () {
+                          print(state.destinationLikedIds.contains(1));
+                      },
+                      icon: state.destinationLikedIds.contains(1)
+                          ? const Icon(Icons.favorite, size: 32, color: Colors.red)
+                          : const Icon(Icons.favorite_outline, size: 32,),
+                    ),
                   ),
                 )
               ],

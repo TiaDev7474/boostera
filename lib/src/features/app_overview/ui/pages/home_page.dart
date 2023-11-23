@@ -1,6 +1,7 @@
 import 'package:boostera/src/common/widget/logo.widget.dart';
 import 'package:boostera/src/features/app_overview/ui/widget/list.category.widget.dart';
 import 'package:boostera/src/features/app_overview/ui/widget/list.destination.dart';
+import 'package:boostera/src/features/app_overview/ui/widget/list.event.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,13 +34,25 @@ class HomePage extends StatelessWidget {
                 children: [
                   Container(
                       padding: const EdgeInsets.all(16),
-                      child: const Text('Destination',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+                      child: const Text('Top Destinations',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
                   Container(
                       padding: const EdgeInsets.all(16),
                       child: const Text('See All',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
                 ],
               ),
-                const DestinationList()
+                const DestinationList(),
+              Row(
+                mainAxisAlignment:  MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                      padding: const EdgeInsets.all(16),
+                      child: const Text('Upcoming Events',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+                  Container(
+                      padding: const EdgeInsets.all(16),
+                      child: const Text('See All',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+                ],
+              ),
+              const EventList()
             ],
           ),
         )
