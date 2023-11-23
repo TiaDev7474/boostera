@@ -82,9 +82,11 @@ class DestinationItem extends StatelessWidget {
                   child: BlocBuilder<LikeBloc, LikeState>(
                     builder: (context, state) => IconButton(
                       onPressed: () {
-                          print(state.destinationLikedIds.contains(1));
+                          state.destinationLikedIds.forEach((e){
+                            print(e);
+                          });
                       },
-                      icon: state.destinationLikedIds.contains(1)
+                      icon: state.destinationLikedIds.contains(destination.destinationId)
                           ? const Icon(Icons.favorite, size: 32, color: Colors.red)
                           : const Icon(Icons.favorite_outline, size: 32,),
                     ),
