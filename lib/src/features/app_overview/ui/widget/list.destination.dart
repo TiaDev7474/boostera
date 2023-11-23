@@ -12,7 +12,7 @@ class DestinationList extends StatelessWidget {
     return BlocBuilder<DestinationBloc,DestinationState>(
         builder: (context,state)=>
             SizedBox(
-              height: 290,
+              height: 300,
               child: ListView.builder(
                   itemBuilder: (context,index)=>  DestinationItem(destination: state.destinations[index]),
                   itemCount: state.destinations.length,

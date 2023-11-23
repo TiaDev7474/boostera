@@ -36,9 +36,9 @@ class EventRepositoryImpl implements EventRepository {
   }
 
   @override
-  Future<Event> getOne({required String id}) {
-    // TODO: implement getOne
-    throw UnimplementedError();
+  Future<Event> getOne({required String id}) async {
+    await Future.delayed(const Duration(seconds: 1));
+    return eventList.map((event )=> Event.fromJson(event)).toList().where((event) => event.eventId == id).first;
   }
 
   @override

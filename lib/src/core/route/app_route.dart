@@ -1,4 +1,5 @@
 import 'package:boostera/src/common/constants/routes.dart' as route_path;
+import 'package:boostera/src/features/event/ui/pages/event_detail_page.dart';
 import 'package:boostera/src/features/event/ui/pages/events_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -77,6 +78,7 @@ class AppRouter {
                     ]
                 ),
                 StatefulShellBranch(
+                    navigatorKey: generateKey("event") ,
                     routes: [
                       GoRoute(
                           path: route_path.eventPage,
@@ -85,7 +87,18 @@ class AppRouter {
                                 child: const EventPage(), 
                                 state: state
                             );
-                          }
+                          },
+                          routes: [
+                            GoRoute(
+                                path: route_path.eventDetailPage,
+                                pageBuilder: (context, state) {
+                                  return getPage(
+                                      child: EventDetails(eventId: state.pathParameters['id']!,),
+                                      state: state
+                                  );
+                                }
+                            )
+                          ]
                       )
                     ]
                 )

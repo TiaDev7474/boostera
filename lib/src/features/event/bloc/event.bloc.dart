@@ -8,19 +8,18 @@ import 'package:boostera/src/features/event/repositories/event.repo.dart';
 
 class EventBloc extends Bloc<EventBlocEvent, EventState> {
   EventBloc(EventRepositoryProvider eventRepositoryProvider)
-      : super(EventState(
-            currentEvent: EventStarted(),
-            requestStatus: RequestState.none,
-            events: [],
-            errorMessage: "")) {
+      : super(EventState.initial()) {
     on<EventLoadAll>((event, emit) async {
-      emit(
-          EventState(currentEvent: event, requestStatus: RequestState.loading));
+      emit(state.copyWith(status: RequestState.loading));
       List<Event> events = await  eventRepositoryProvider.getAll(
           perPage: event.perPage as int,
           currentPage: event.perPage as int);
-      print(events.length);
-      emit(EventState(currentEvent: event, requestStatus: RequestState.loaded,events: events));
+      emit(state.copyWith(status: RequestState.loaded, events: events));
+    });
+    on<EventLoadOne>((event, emit) async {
+      emit(state.copyWith(status: RequestState.loading));
+      Event foundEvent = await eventRepositoryProvider.getOne(id:event.eventId);
+      emit(state.copyWith(status: RequestState.loaded, event: foundEvent));
     });
   }
 }
