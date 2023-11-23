@@ -1,3 +1,4 @@
+import 'package:boostera/src/features/app_overview/bloc/action/like.action.dart';
 import 'package:boostera/src/features/app_overview/bloc/bloc/like.blloc.dart';
 import 'package:boostera/src/features/app_overview/bloc/state/like.state.dart';
 import 'package:boostera/src/features/app_overview/model/destinaton.model.dart';
@@ -82,7 +83,7 @@ class DestinationItem extends StatelessWidget {
                   child: BlocBuilder<LikeBloc, LikeState>(
                     builder: (context, state) => IconButton(
                       onPressed: () {
-
+                        context.read<LikeBloc>().add(LikePressedEvent(destination));
                       },
                       icon: state.destinationLikedIds.contains(destination.destinationId)
                           ? const Icon(Icons.favorite, size: 32, color: Colors.red)
