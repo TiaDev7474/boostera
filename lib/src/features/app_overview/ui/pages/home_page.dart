@@ -1,5 +1,6 @@
 import 'package:boostera/src/common/widget/logo.widget.dart';
 import 'package:boostera/src/features/app_overview/ui/widget/list.category.widget.dart';
+import 'package:boostera/src/features/app_overview/ui/widget/list.destination.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,14 +19,29 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white10,
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-              Container(
-                  padding: const EdgeInsets.all(16),
-                  child: const Text('Category',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
-              const ListCategoryWidget()
-          ],
+        body: SingleChildScrollView(
+
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                Container(
+                    padding: const EdgeInsets.all(16),
+                    child: const Text('Category',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+                const ListCategoryWidget(),
+              Row(
+                mainAxisAlignment:  MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                      padding: const EdgeInsets.all(16),
+                      child: const Text('Destination',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+                  Container(
+                      padding: const EdgeInsets.all(16),
+                      child: const Text('See All',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 20))),
+                ],
+              ),
+                const DestinationList()
+            ],
+          ),
         )
     );
   }

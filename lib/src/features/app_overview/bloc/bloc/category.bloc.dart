@@ -19,7 +19,7 @@ class CategoryBloc extends Bloc<CategoryEvent,CategoryState>{
       try{
         List<Category> data = await categoryRepository.getAllCategories();
         emit(CategoryState(categories: data,requestState: RequestState.loaded));
-        destinationBloc.add(DestinationLoadByCategoryEvent(data[0]));
+        destinationBloc.add(DestinationLoadByCategoryEvent(data[3]));
       }on Exception catch(e) {
         emit(CategoryState(categories: state.categories,requestState: RequestState.error));
       }

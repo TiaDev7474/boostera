@@ -13,7 +13,7 @@ class ListCategoryWidget extends StatelessWidget {
     context.read<CategoryBloc>().add(CategoryLoadAllEvent());
     return BlocBuilder<CategoryBloc,CategoryState>(
         builder: (context,state)=>SizedBox(
-          height: 150,
+          height: 90,
           child: ListView.builder
             (
             itemBuilder: (context,index) =>
