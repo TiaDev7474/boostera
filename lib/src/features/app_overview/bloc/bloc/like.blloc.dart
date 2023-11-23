@@ -13,7 +13,6 @@ class LikeBloc extends Bloc<LikeEvent,LikeState>{
            bool test = element.likeUserIds.contains(1);
            if(test){
              destinationIds.add(element.destinationId);
-             print('destination id ${element.destinationId}');
            }
        });
        emit(LikeState(destinationLikedIds: destinationIds));
