@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:boostera/src/common/enums/enums.dart';
 import 'package:boostera/src/features/app_overview/bloc/action/destination.action.dart';
+import 'package:boostera/src/features/app_overview/bloc/action/like.action.dart';
 import 'package:boostera/src/features/app_overview/bloc/state/destination.state.dart';
 import 'package:boostera/src/features/app_overview/model/destinaton.model.dart';
 
@@ -18,6 +19,7 @@ class DestinationBloc extends Bloc<DestinationEvent,DestinationState>{
       try{
           List<Destination> data = await destinationRepository.getAllDestination();
           emit(DestinationState(destinations: data,requestState: RequestState.loaded,currentEvent: event));
+
       }on Exception catch(e){
         emit(DestinationState(destinations: state.destinations,requestState: RequestState.error,currentEvent: event));
       }
@@ -27,6 +29,7 @@ class DestinationBloc extends Bloc<DestinationEvent,DestinationState>{
       try{
         List<Destination> data = await destinationRepository.getDestinationByCategory(event.payload.id as int);
         emit(DestinationState(destinations: data,requestState: RequestState.loaded,currentEvent: event));
+        likeBloc.add(LikeInitialiseEvent(data));
       }on Exception catch(e){
         emit(DestinationState(destinations: state.destinations,requestState: RequestState.error,currentEvent: event));
       }

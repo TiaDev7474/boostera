@@ -5,7 +5,8 @@ import 'package:boostera/src/features/app_overview/model/destinaton.model.dart';
 class DestinationRepository {
     Map<int,Destination> destinations = {
       1: Destination(
-        imageUrl: 'https://example.com/image1.jpg',
+        destinationId: 1,
+        imageUrl: 'assets/mahajanga.jpg',
         title: 'Parc national d\'Andasibe-Mantadia',
         category: 4,
         categoryDescription:'Parc',
@@ -14,7 +15,8 @@ class DestinationRepository {
         likeUserIds: [1, 2, 3],
       ),
       2: Destination(
-        imageUrl: 'https://example.com/image2.jpg',
+        destinationId: 2,
+        imageUrl: 'assets/TsingyOfBemaraha.jpg',
         title: 'Tsingy de Bemaraha',
         category: 4,
         categoryDescription:'Culture',
@@ -23,31 +25,34 @@ class DestinationRepository {
         likeUserIds: [2, 4, 5],
       ),
       3: Destination(
-        imageUrl: 'https://example.com/image3.jpg',
+        destinationId: 3,
+        imageUrl: 'assets/baobab.jpg',
         title: 'Avenue des Baobabs',
         category: 4,
         categoryDescription:'Île',
         address: 'Avenue des Baobabs, Madagascar',
         rating: 1,
-        likeUserIds: [3, 6, 8],
+        likeUserIds: [1, 6, 8],
       ),
       4: Destination(
-        imageUrl: 'https://example.com/image4.jpg',
+        destinationId: 4,
+        imageUrl: 'assets/plage.jpg',
         title: 'Île Sainte-Marie',
         category: 4,
         categoryDescription:'Île',
         address: 'Île Sainte-Marie, Madagascar',
         rating: 4.7,
-        likeUserIds: [4, 7, 9],
+        likeUserIds: [2, 7, 9],
       ),
       5: Destination(
-        imageUrl: 'https://example.com/image5.jpg',
+        destinationId: 4,
+        imageUrl: 'assets/Antananarivo.jpg',
         title: 'Ranomafana National Park',
         category: 4,
         categoryDescription:'Parc',
         address: 'Ranomafana, Madagascar',
         rating: 3.5,
-        likeUserIds: [5, 10, 11],
+        likeUserIds: [2, 4,3],
       ),
     };
 
